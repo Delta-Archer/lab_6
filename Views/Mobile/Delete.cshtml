@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Видалити замовлення";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.ActionLink("Назад", "Index", "Mobile")
+@model Lab_6.Models.Mobiles
+<h2>Видалення запису про телефон</h2>
+<dl>
+    <dt><b>Модель</b></dt>
+    <dd>
+        @Html.DisplayFor(model => model.Model)
+    </dd>
+    <dt><b>Ціна</b></dt>
+    <dd>
+        @Html.DisplayFor(model => model.Price)
+    </dd>
+</dl>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Видалити" class="btn btn-default" /> 
+    </div>
+}
